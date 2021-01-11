@@ -24,7 +24,7 @@ jobs:
     - name: ThunderScan
       uses: defensecode/thunderscan-action@v1.0
       with:
-        api_url: 'http://192.168.0.55:8999'
+        api_url: 'http://192.168.0.28:8999'
         client_path: '/opt/thunderscan/tsactioncli'
         engines: '1'
         api_token:  ${{ secrets.THUNDERSCAN_TOKEN }}
