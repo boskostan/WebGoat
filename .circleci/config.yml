@@ -1,20 +1,11 @@
-commands:
-  sayhello:
-    description: "A very simple command for demonstration purposes"
-    parameters:
-      to:
-        type: string
-        default: "World"
-    steps:
-      - run: echo Hello << parameters.to >>
+version: 1.0
 
 jobs:
   myjob:
     docker:
       - image: "cimg/base:stable"
     steps:
-      - sayhello: # invoke command "sayhello"
-          to: "Test"
+      - run: echo Hello
 
 workflows:
   version: 2
