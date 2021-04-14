@@ -5,7 +5,15 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
-      - run: echo Hello
+      - run:
+          name: Download/Extract-ThunderScan-API-CLI-Client
+          command: |
+            wget https://downloads.defensecode.com/latest/archives-tar/thunderscan-cli.tar.gz -O thunderscan-cli.tar.gz
+            tar xvzf thunderscan-cli.tar.gz
+      - run:
+          name: Run ThunderScan CLI Client
+          command: |
+            ./thunderscan-cli
 
 workflows:
   version: 2
